@@ -24,13 +24,12 @@ export const create = async (req, res) => {
             });
         }
 
-        const { nome, descricao, preco, categoria, avaliacao } = req.body;
+        const { nome, descricao, preco, categoria } = req.body;
 
         if (!nome) return res.status(400).json({ error: 'O nome (nome) é obrigatório!' });
         if (!descricao) return res.status(400).json({ error: 'A descricao (descricao) é obrigatória!' });
         if (!categoria) return res.status(400).json({ error: 'A categoria (categoria) é obrigatória!' });
         if (!preco) return res.status(400).json({ error: 'O preço (preco) é obrigatório!' });
-        if (avaliacao === undefined) return res.status(400).json({ error: 'A avaliação (avaliacao) é obrigatória!' });
 
         const data = await model.create({
             nome,
@@ -41,12 +40,12 @@ export const create = async (req, res) => {
         });
 
         res.status(201).json({
-            message: 'Registro de nova comida cadastrado com sucesso!',
+            message: 'Comida cadastrada com sucesso!',
             data,
         });
     } catch (error) {
         console.error('Erro ao criar:', error);
-        res.status(500).json({ error: 'Erro interno no servidor ao salvar o registro.' });
+        res.status(500).json({ error: 'Erro interno no servidor ao salvar comida.' });
     }
 };
 
@@ -60,12 +59,12 @@ export const getById = async (req, res) => {
 
         const data = await model.findById(id);
         if (!data) {
-            return res.status(404).json({ error: 'Registro não encontrado.' });
+            return res.status(404).json({ error: 'Comida não encontrada.' });
         }
         res.json({ data });
     } catch (error) {
         console.error('Erro ao buscar:', error);
-        res.status(500).json({ error: 'Erro ao buscar registro' });
+        res.status(500).json({ error: 'Erro ao buscar comida' });
     }
 };
 
@@ -83,17 +82,17 @@ export const update = async (req, res) => {
 
         const exists = await model.findById(id);
         if (!exists) {
-            return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
+            return res.status(404).json({ error: 'Comida não encontrada para atualizar.' });
         }
 
         const data = await model.update(id, req.body);
         res.json({
-            message: `O registro "${data.nome}" foi atualizado com sucesso!`,
+            message: `A comida "${data.nome}" foi atualizada com sucesso!`,
             data,
         });
     } catch (error) {
         console.error('Erro ao atualizar:', error);
-        res.status(500).json({ error: 'Erro ao atualizar registro' });
+        res.status(500).json({ error: 'Erro ao atualizar comida' });
     }
 };
 
@@ -105,16 +104,16 @@ export const remove = async (req, res) => {
 
         const exists = await model.findById(id);
         if (!exists) {
-            return res.status(404).json({ error: 'Registro não encontrado para deletar.' });
+            return res.status(404).json({ error: 'Comida não encontrada para deletar.' });
         }
 
         await model.remove(id);
         res.json({
-            message: `O registro "${exists.nome}" foi deletado com sucesso!`,
+            message: `A comida "${exists.nome}" foi deletada com sucesso!`,
             deletado: exists,
         });
     } catch (error) {
         console.error('Erro ao deletar:', error);
-        res.status(500).json({ error: 'Erro ao deletar registro' });
+        res.status(500).json({ error: 'Erro ao deletar comida' });
     }
 };

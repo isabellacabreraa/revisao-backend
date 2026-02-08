@@ -1,7 +1,7 @@
 {
-  "name": "backend-revisao",
+  "name": "c",
   "version": "1.0.0",
-  "description": "",
+  "description": "- npm init -y",
   "main": "server.js",
   "type": "module",
   "private": true,
@@ -9,7 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js"
   },
-  "keywords": ["backend", "revisao"],
+  "keywords": [
+    "backend",
+    "revisao"
+  ],
   "author": "Isabella Cabrera",
   "license": "MIT",
   "dependencies": {
@@ -22,5 +25,13 @@
   "devDependencies": {
     "nodemon": "^3.1.11",
     "prisma": "^7.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isabellacabreraa/revisao-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isabellacabreraa/revisao-backend/issues"
+  },
+  "homepage": "https://github.com/isabellacabreraa/revisao-backend#readme"
 }
