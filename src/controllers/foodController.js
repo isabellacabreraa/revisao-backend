@@ -36,7 +36,6 @@ export const create = async (req, res) => {
             descricao,
             preco: parseFloat(preco),
             categoria,
-            avaliacao,
         });
 
         res.status(201).json({

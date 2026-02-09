@@ -16,7 +16,7 @@ async function main() {
             {
                 nome: 'Temaki Filadélfia',
                 descricao: 'Cone de alga nori crocante recheado com arroz japonês temperado (shari), salmão fresco, cream cheese e cebolinha.',
-                preco: 24.46,
+                preco: 24,
                 categoria: 'Frutos do Mar',
                 avaliacao: true,
             },
@@ -24,7 +24,7 @@ async function main() {
             {
                 nome: 'Lasanha de Frango',
                 descricao: 'Massa de lasanha fresca com frango desfiado e molho bechamel.',
-                preco: 18.50,
+                preco: 18,
                 categoria: 'Massas',
                 avaliacao: true,
             },
@@ -32,7 +32,7 @@ async function main() {
             {
                 nome: 'Hambúrguer ',
                 descricao: 'Hambúrguer artesanal de costela bovina, queijo cheddar e salada.',
-                preco: 20.00,
+                preco: 20,
                 categoria: 'Lanches',
                 avaliacao: true,
             },
@@ -40,7 +40,7 @@ async function main() {
             {
                 nome: 'Pizza de Calabresa',
                 descricao: 'Massa de pizza caseira com calabresa fatiada, molho de tomate e queijo mussarela.',
-                preco: 35.90,
+                preco: 35,
                 categoria: 'Massa',
                 avaliacao: true,
             },
@@ -48,7 +48,7 @@ async function main() {
             {
                 nome: 'Torta de Morango',
                 descricao: 'Torta de morango fresco com creme de leite e massa crocante.',
-                preco: 11.00,
+                preco: 11,
                 categoria: 'Sobremesas',
                 avaliacao: true,
             },
